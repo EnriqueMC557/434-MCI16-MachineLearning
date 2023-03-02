@@ -131,3 +131,5 @@ dmypy.json
 .idea/
 
 *.backup
+
+data/230207COVID19MEXICO.csv

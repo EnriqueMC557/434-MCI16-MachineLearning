@@ -1,0 +1,21 @@
+Para el desarrollo de esta práctica se utilizó el lenguaje de programación Python en su versión 3.10, con el que se diseñó un script para cumplir los objetivos de la práctica.
+
+\subsection{Conjunto de datos utilizado}
+El conjunto de datos utilizado para esta práctica consta de una colección cuyo objetivo es la predicción de un derrame cerebral (stroke, en inglés). Dicho conjunto de datos fue obtenido de la plataforma \href{https://www.kaggle.com/datasets/prosperchuks/health-dataset?select=stroke_data.csv}{Kaggle}, y consta de 10 atributos de diversos tipos y 1 variable objetivo, teniendo un total de \emph{40,910} instancias.
+
+\subsection{Generación de datos faltantes}
+Originalmente, el conjunto de datos utilizado solamente contaba con 3 instancias faltantes de un único atributo, por lo que se diseñó un script en Python que borra de forma aleatoria un porcentaje dado de datos del conjunto de datos.
+
+\subsection{Procedimiento para imputación de datos}
+Teniendo el conjunto de datos listo para aplicar los métodos de imputación, se procedió a realizar la siguiente lista de pasos:
+
+\begin{enumerate}
+	\item Estimar el porcentaje de datos faltantes.
+	\item Generar histogramas de todas los atributos del conjunto de datos.
+	\item Generar mapa de calor de correlación del conjunto de datos.
+	\item Elegir técnica de imputación adecuada para cada atributo.
+	\item Realizar imputación de datos faltantes.
+	\item Generar histogramas de todos los atributos del conjunto de datos con los datos imputados.
+\end{enumerate}
+
+Dichos pasos fueron implementados dentro de un script de Python que implementa los métodos de imputación elegidos, así como generar gráficos y mostrar resultados en terminal.

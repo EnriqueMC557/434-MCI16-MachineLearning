@@ -1,0 +1,21 @@
+\subsection{Técnicas de imputación por información externa o deductiva}
+Consisten en deducir los datos faltantes mediante reglas pre-establecidas que contemplan a instancias completas \cite{Aceves2021}.
+
+\subsection{Técnicas deterministas de imputación}
+Útiles cuando de acuerdo a las mismas condiciones de los datos se producen las mismas respuestas.
+
+\begin{itemize}
+	\item \textbf{Imputación por regresión}. Se ajusta un modelo lineal o polinomial usando atributos sin datos faltantes. Los datos faltantes se toman del ajuste resultante de la regresión \cite{Aceves2021}.
+	\item \textbf{Imputación de la media (o moda)}. Los datos faltantes se llenan con la media (o moda en el caso de atributos cualitativos) de las instancias no faltantes \cite{Aceves2021}.
+	\item \textbf{Imputación por media de clases}. Se calcula la media (o moda) de las instancias que tienen valor por cada clase y se llena el valor faltante para cada una de las clases \cite{Aceves2021}.
+	\item \textbf{Imputación por vecino más cercano}. Se calcula la distancia entre la instancia a imputar y los datos que tienen valor establecido. El dato más cercano será el utilizado para imputar la instancia faltante.
+\end{itemize}
+
+\subsection{Técnicas estocásticas de imputación}
+Se definen como aquellas técnicas de imputación que al repetirse bajo las mismas condiciones producen resultados diferentes.
+
+\begin{itemize}
+	\item \textbf{Imputación aleatoria}. Se toman las posibles observaciones del atributo con datos faltantes, se selecciona un valor dentro del rango existente y se llena el dato faltante con dicha elección aleatoria \cite{Aceves2021}.
+	\item \textbf{Imputación secuencial}. Consiste en tomar de manera secuencial los datos existentes para reemplazar los datos faltantes. Se toma de manera aleatoria un dato existente y se utiliza dicho valor para reemplazar el primer dato faltante, posteriormente se toma el siguiente valor existente y se utiliza para reemplazar el siguiente dato faltante, el proceso se repite hasta haber llenado todos los datos faltantes \cite{Aceves2021}.
+\end{itemize}
+

@@ -1,0 +1,119 @@
+% Plantilla latex para protocolo de tesis de posgrado en la 
+% Facultad de Ingeniería, Universidad Autónoma de Querétaro
+%
+% @author {Gerardo Hernández-Nava, Enrique Mena-Camilo, Sheila Leyva-López}
+% @email {gerardohn.uam@gmail.com, enriquemece97@gmail.com, sheileyva29@gmail.com}
+% @year 2022
+% @version 1.0
+% @license CC-BY-NC
+%
+% Se agradecen sus comentarios, contribuciones, 
+% reporte de bugs y la difusión de esta plantilla
+
+
+\documentclass[12pt, letterpaper, spanish, twoside]{article}
+\AddToHook{cmd/section/before}{\clearpage}
+\usepackage{./common/UAQ}
+
+\usepackage{xcolor}
+\usepackage{emptypage}
+\setlength{\cftsecnumwidth}{3em} %Se cambia el espacio entre el item y el nombre de la seccion
+\setlength{\cftsubsecnumwidth}{3em}
+\setlength{\cftsubsecindent}{3em}
+\setlength{\cftsubsubsecindent}{6em}
+
+\usepackage{threeparttablex}
+\usepackage{adjustbox}
+\usepackage{listingsutf8}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\graphicspath{{./figures/}, {../figures}}
+
+\usepackage{tabulary}
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\lstset{inputencoding=utf8/latin1}
+\renewcommand{\tablename}{Tabla}
+
+\input{./chapters/portada}
+
+\backgroundsetup{
+	scale = 1,
+	angle = 0,
+	opacity = 1,
+	contents = {\includegraphics[width=\paperwidth]{BodyBackground.pdf}}}
+
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Objetivo}
+\input{./chapters/1_objetivo}
+
+\section{Introducción}
+\input{./chapters/2_introduccion}
+
+\section{Marco teórico}
+\input{./chapters/3_marco_teorico}
+
+\section{Materiales y métodos}
+\input{./chapters/4_metodo}
+
+% \section{Pseudocódigo}
+% \input{./chapters/5_pseudocodigo}
+
+\section{Resultados}
+\input{./chapters/6_resultados}
+
+\section{Conclusiones}
+\input{./chapters/7_conclusiones}
+
+% \nocite{*}
+\renewcommand{\refname}{Referencias bibliográficas}
+\bibliographystyle{IEEEtran-spanish}
+\bibliography{referencias}
+
+\appendix
+\section{Código documentado}
+El código completo y funcional se puede encontrar anexo en el archivo \emph{zip} compartido en conjunto con este reporte, así como en las secciones anexas.
+
+\subsection{DeleteData.py}
+Script implementado para generar datos faltantes.
+\lstinputlisting[language=Python]{../DeleteData.py}
+
+\subsection{Practica2\_EnriqueMenaCamilo.py}
+Script implementado para el desarrollo de la práctica.
+\lstinputlisting[language=Python]{../Practica2_EnriqueMenaCamilo.py}
+
+\end{document}

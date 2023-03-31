@@ -1,0 +1,66 @@
+\subsection{Métodos de normalización de datos}
+
+\subsubsection{Normalización min-max}
+La normalización min-max es un método común de normalización de datos utilizado en aprendizaje automático para ajustar los valores de un conjunto de datos dentro de un rango específico. El método se basa en la escala de los datos de manera proporcional al rango completo de los datos.
+
+El proceso de normalización min-max implica la transformación de cada valor de la característica en una escala de 0 a 1, en relación con el valor mínimo y máximo de esa característica en el conjunto de datos. La fórmula para calcular el valor normalizado de cada valor de característica es la siguiente:
+
+$$x_{normalizado} = \frac{x - x_{min}}{x_{max} - x_{min}}$$
+
+Donde $x$ representa la observación que se desea transformar, $x_{min}$ representa el valor mínimo del conjunto de observaciones, y $x_{max}$ representa el valor máximo del conjunto de observaciones.
+
+Dicho valor normalizado puede ser escalado posteriormente al rango deseado mediante la aplicación de la ecuación siguiente:
+
+$$x_{escalado} = x_{normalizado} * (r_{max} - r_{min}) + r_{min}$$
+
+Donde $x_{normalizado}$ representa el resultado de normalizar la observación en el rango típico de 0 a 1, $r_{max}$ representa el valor máximo al que se desea escalar los datos, y $r_{min}$ representa el valor mínimo al que se desea escalar los datos.x
+
+La normalización min-max es útil cuando se quiere comparar características con diferentes rangos de valores y para preparar los datos para algoritmos que requieren que los datos estén en un rango específico. Sin embargo, es importante tener en cuenta que la normalización min-max puede ser sensible a los valores atípicos, por lo que puede ser necesario utilizar otras técnicas de normalización si hay valores atípicos presentes en los datos.
+
+\subsubsection{Normalización z-score}
+La normalización z-score, también conocida como estandarización, es un método común de normalización de datos utilizado en aprendizaje automático para ajustar los valores de un conjunto de datos para que tengan una media de cero y una desviación estándar de uno.
+
+El proceso de normalización z-score implica la transformación de cada valor de la característica en una escala basada en la media y la desviación estándar de esa característica en el conjunto de datos. La fórmula para calcular el valor normalizado de cada valor de característica es la siguiente:
+
+$$x_{normalizado} = \frac{x-\bar{x}}{\sigma}$$
+
+Donde $x$ es el valor sin escalar de la característica, $\bar{x}$ es la media de esa característica en el conjunto de datos, y $\sigma$ es la desviación estándar de esa característica en el conjunto de datos.
+
+La normalización z-score es útil cuando se desea comparar características con diferentes unidades de medida y para preparar los datos para algoritmos que requieren que los datos tengan una distribución normal. La normalización z-score también puede ayudar a reducir la influencia de los valores atípicos en los datos.
+
+Sin embargo, es importante tener en cuenta que la normalización z-score puede no ser adecuada para conjuntos de datos que no tienen una distribución normal o que tienen valores atípicos extremos.
+
+\subsubsection{Normalización L1}
+La normalización L1 es un método de normalización de datos utilizado en aprendizaje automático para ajustar los valores de un conjunto de datos de manera que la suma de los valores absolutos de cada característica sea igual a 1.
+
+El proceso de normalización L1 implica la transformación de cada valor de la característica en una escala basada en la suma de los valores absolutos de esa característica en el conjunto de datos. La fórmula para calcular el valor normalizado de cada valor de característica es la siguiente:
+
+$$x_{normalizados} = \frac{x}{\sum \mid x \mid}$$
+
+Donde $x$ es el valor sin escalar de la característica.
+
+La normalización L1 es útil cuando se desea que los datos sean robustos frente a valores extremos y cuando se desea que los valores de las características estén en la misma escala. La normalización L1 también puede ayudar a reducir la influencia de los valores atípicos en los datos.
+
+Sin embargo, es importante tener en cuenta que la normalización L1 puede no ser adecuada para conjuntos de datos con características altamente correlacionadas, ya que puede conducir a la reducción de la información útil. En esos casos, se pueden utilizar otras técnicas de normalización.
+
+%%%%%%%%%%
+
+\newpage
+\subsection{Métodos para creación de datos sintéticos}
+
+% \subsubsection{Método de ruleta}
+
+
+\subsubsection{SMOTE}
+SMOTE (Synthetic Minority Over-sampling Technique) es un algoritmo de sobremuestreo sintético utilizado en aprendizaje automático para abordar el problema del desequilibrio de clases en los datos. Este algoritmo genera datos sintéticos de la clase minoritaria mediante la interpolación de los datos existentes de la clase minoritaria. SMOTE funciona mediante la selección de un punto de datos de la clase minoritaria y la creación de nuevos puntos de datos sintéticos que se encuentran a lo largo de las líneas entre el punto seleccionado y sus vecinos más cercanos.
+
+El proceso de SMOTE se realiza en los siguientes pasos:
+
+\begin{enumerate}
+	\item Se selecciona un punto de datos de la clase minoritaria.
+	\item Selecciona los k vecinos más cercanos del punto seleccionado.
+	\item Selecciona un vecino aleatorio de los k vecinos más cercanos y calcula la diferencia entre el punto seleccionado y el vecino seleccionado.
+	\item Multiplica la diferencia por un número aleatorio entre 0 y 1 y agrega el resultado al punto seleccionado para crear un nuevo punto de datos sintético.
+\end{enumerate}
+
+El método SMOTE es útil porque ayuda a abordar el problema del desequilibrio de clases al generar datos sintéticos de la clase minoritaria, lo que puede aumentar el tamaño del conjunto de datos de la clase minoritaria y mejorar el rendimiento del modelo. Sin embargo, es importante tener en cuenta que la generación de datos sintéticos puede aumentar el riesgo de sobreajuste del modelo. Además, la selección de un valor óptimo para el parámetro k puede ser crítica para el rendimiento del modelo.

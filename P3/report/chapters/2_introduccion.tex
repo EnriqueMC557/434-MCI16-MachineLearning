@@ -1,0 +1,30 @@
+La normalización de datos es una técnica esencial en el aprendizaje automático que se utiliza para preparar y pre-procesar los datos antes de entrenar un modelo. La normalización implica escalar los datos de manera que todas las características tengan el mismo rango de valores, lo que ayuda a evitar que ciertas características dominen el proceso de aprendizaje y mejora la precisión y estabilidad del modelo.
+
+La normalización se puede realizar de varias formas, como la normalización min-max, la normalización z-score y la normalización de unidades vectoriales. Cada método tiene sus propias ventajas y desventajas y es importante elegir el método adecuado en función de los requisitos específicos del modelo.
+
+Algunos ejemplos de algoritmos de aprendizaje automático que se benefician de la normalización de datos son:
+
+\begin{itemize}
+	\item \textbf{Redes neuronales}: La normalización de datos es esencial para entrenar redes neuronales eficientes y estables. La normalización z-score y la normalización de unidades vectoriales son las técnicas de normalización más comunes en redes neuronales.
+
+	\item \textbf{SVM (máquinas de soporte vectorial)}: La normalización de datos es importante para SVM porque el algoritmo busca el hiperplano que mejor separa las clases. La normalización min-max es una técnica de normalización común para SVM.
+
+	\item \textbf{KNN (k-vecinos más cercanos)}: La normalización de datos es importante para KNN porque el algoritmo utiliza la distancia euclidiana para medir la similitud entre instancias. La normalización z-score es una técnica de normalización común para KNN.
+
+	\item \textbf{Regresión lineal}: La normalización de datos es importante para la regresión lineal porque ayuda a evitar que una característica tenga un peso dominante en el modelo. La normalización min-max y la normalización z-score son técnicas de normalización comunes para la regresión lineal.
+\end{itemize}
+
+El desbalance de clases en aprendizaje automático se produce cuando una clase tiene muchas más muestras que otras. Esto puede causar problemas durante el entrenamiento del modelo, ya que el modelo puede aprender a predecir siempre la clase mayoritaria, lo que resulta en una precisión engañosa. También puede haber problemas en la validación del modelo, ya que el modelo puede tener una precisión alta simplemente porque la clase minoritaria se predice con poca frecuencia, lo que puede ser un problema en aplicaciones del mundo real.
+
+Existen varios algoritmos que pueden ayudar a lidiar con el problema de desbalance de clases en aprendizaje automático, de los cuales, para fines de este trabajo, destacan los algoritmos de sobremuestreo sintético:
+
+\begin{itemize}
+	\item \textbf{SMOTE (Synthetic Minority Over-sampling Technique)}: es uno de los algoritmos más utilizados para el sobremuestreo sintético. SMOTE genera nuevas instancias de la clase minoritaria interpolando las características de las instancias existentes de esta clase. Básicamente, SMOTE crea una instancia sintética entre dos instancias de la clase minoritaria cercanas en el espacio de características.
+
+	\item \textbf{ADASYN (Adaptive Synthetic Sampling)}: es otro algoritmo de sobremuestreo sintético que también utiliza una técnica de interpolación. ADASYN tiene en cuenta la densidad de las instancias de la clase minoritaria y genera nuevas instancias en regiones más densas para reducir la posibilidad de sobremuestreo en regiones menos densas.
+
+	\item \textbf{Borderline-SMOTE}: es una variante de SMOTE que solo genera instancias sintéticas en la frontera entre las clases minoritaria y mayoritaria. Borderline-SMOTE intenta enfocarse en las regiones de decisión más difíciles y evitar el sobremuestreo en las regiones de la clase minoritaria que están bien separadas de la clase mayoritaria.
+
+	\item \textbf{MDO (Minority Data Oversampling)}: es un algoritmo de sobremuestreo sintético que utiliza una estrategia de vecinos más cercanos para generar nuevas instancias. MDO encuentra los vecinos más cercanos de las instancias de la clase minoritaria y crea nuevas instancias basadas en la media y la desviación estándar de los valores de características de los vecinos cercanos.
+\end{itemize}
+

@@ -1,0 +1,56 @@
+Para el desarrollo de esta práctica se utilizó el lenguaje de programación Python en su versión 3.10, con el que se diseño un script para cumplir los objetivos de la práctica.
+
+\subsection{Conjunto de datos utilizado}
+El conjunto de datos utilizado para esta práctica consta de datos tabulares con información clínica para la predicción no invasiva de coledocolitiasis (CBDS, por sus siglas en inglés). Dicho conjunto de datos consta de 19 atributos y 1 variable objetivo, teniendo un total de 293 instancias. El conjunto de datos se encuentra completo, es decir, no hay presencia de datos faltantes.
+
+Los atributos (y variable objetivo) del conjunto de datos se pueden agrupar de la siguiente manera:
+
+\begin{itemize}
+	\item Dicotómicos
+	\begin{itemize}
+		\item gender
+		\item dm
+		\item ibd
+		\item cirrhosis
+		\item stones\_on\_bd
+		\item stone\_sludge\_ercp (variable objetivo)
+		\item pyobilia\_ercp
+	\end{itemize}
+	\item Categóricos
+	\begin{itemize}
+		\item age\_at\_ercp
+		\item race
+		\item parity
+		\item intraductal\_filling
+		\item cystic\_duct\_filling
+		\item stone\_shape\_ercp
+		\item stone\_color\_ercp
+		\item gallbladder
+	\end{itemize}
+	\item Continuos
+	\begin{itemize}
+		\item bmi
+		\item peak\_bili
+		\item cbd\_diameter\_us
+		\item cbd\_diameter\_mrcp
+		\item cbd\_diameter\_ercp
+	\end{itemize}
+\end{itemize}
+
+\subsection{Normalización de datos}
+Para el proceso de normalización de datos se diseñaron diversas funciones en el lenguaje de programación Python, la cuales implementan normalización mediante los métodos min-max, z-score y L1.
+
+Los atributos dicotómicos no se sometieron a proceso de normalización ni codificación, ya que estos se presentaban como 0 y 1 correctamente. Todos los atributos continuos se sometieron a un proceso de normalización mediante el método z-score, debido a que es un método ampliamente utilizado  para normalizar datos que serán utilizados dentro de una red neuronal artificial. El resto de atributos, los categóricos, se sometieron a normalización mediante min-max y L1, esto principalmente por fines educativos.
+
+Para evaluar el correcto funcionamiento de los métodos de normalización, se diseñaron funciones que agilizan la obtención y almacenamiento de histogramas. Primero se generaron y almacenaron los histogramas de los datos sin normalizar, posteriormente se aplicaron los métodos de normalización y se volvió a generar y almacenar los histogramas, pero ahora usando los datos normalizados.
+
+\subsection{Balance de clases}
+Para el balance de clases mediante generación de datos sintéticos se diseñaron funciones que permiten implementar 2 métodos de balance de datos: el método de ruleta, y el método SMOTE.
+
+Para evaluar el funcionamiento de estos algoritmos se realizaron 3 pruebas:
+
+\begin{itemize}
+	\item Se generó una gráfica de distribución de clase: Esto para corroborar que se generaron nuevas instancias de las clase con menor instancias.
+	\item Se obtuvieron los valores de desviación estándar de los datos originales y los datos sintéticos: Esto para tener una idea de las variaciones que presentaban ambos conjuntos de datos.
+	\item Se generaron histogramas de los datos sintéticos: Para comparar la distribución de los nuevos datos respecto a los datos originales.
+\end{itemize}

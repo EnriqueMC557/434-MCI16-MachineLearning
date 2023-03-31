@@ -1,4 +1,4 @@
-# Machine Learning: Práctica 1
+# Machine Learning: Práctica 2
 Profesor: Dr. Marco Aceves <br>
 Alumno: Ing. Enrique Mena Camilo
 

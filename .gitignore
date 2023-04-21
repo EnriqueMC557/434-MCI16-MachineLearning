@@ -137,3 +137,8 @@ data/230207COVID19MEXICO.csv
 .vscode/
 
 *.pygtex
+
+*.pygstyle
+*/_minted-main/
+
+P3/report/_minted-main/

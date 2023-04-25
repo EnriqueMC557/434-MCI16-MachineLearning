@@ -189,7 +189,7 @@ def evaluate_regression(actual: np.ndarray, predicted: np.ndarray):
 if __name__ == "__main__":
     # === Data cleaning ===
     data = pd.read_csv("../data/Nasdaq.csv")
-    data.head()
+    print(data.head())
 
     # It is necessary to give the correct format to the columns
     data["Date"] = pd.to_datetime(data["Date"])
@@ -198,15 +198,15 @@ if __name__ == "__main__":
     data["High"] = data["High"].apply(currency_str_to_float)
     data["Low"] = data["Low"].apply(currency_str_to_float)
 
-    data.head()
+    print(data.head())
 
     # The data is sorted descending, we need them sorted ascending
     data = data.sort_values(by="Date", ascending=True, ignore_index=True)
-    data.head()
-    data.describe().T
+    print(data.head())
+    print(data.describe().T)
 
     # Does the dataset have missing data?
-    data.info()
+    print(data.info())
     # R: No, the dataset is complete
 
     # === Data normalization ===
@@ -249,8 +249,8 @@ if __name__ == "__main__":
     data_norm["Day"] = data_norm["Date"].apply(lambda x: x.day)
     data_norm["Month"] = data_norm["Date"].apply(lambda x: x.month)
 
-    data_norm.head()
-    data_norm.describe().T
+    print(data_norm.head())
+    print(data_norm.describe().T)
 
     # === Feature selecction ===
     # We want to predict Close/Last using regression, which attributes will be most useful to us?
@@ -359,7 +359,7 @@ if __name__ == "__main__":
 
     plot_predictions((date_train, Y_train), (date_test, Y_test), rdr_train, rdr_test, "Ridge regression")
 
-    print("===== Multiple Linear Regression Evaluation =====")
+    print("===== Ridge Regression Evaluation =====")
     evaluate_regression(Y_test, rdr_test)
 
     input()

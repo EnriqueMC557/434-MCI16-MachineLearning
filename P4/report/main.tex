@@ -1,0 +1,91 @@
+% Plantilla latex para protocolo de tesis de posgrado en la 
+% Facultad de Ingeniería, Universidad Autónoma de Querétaro
+%
+% @author {Gerardo Hernández-Nava, Enrique Mena-Camilo, Sheila Leyva-López}
+% @email {gerardohn.uam@gmail.com, enriquemece97@gmail.com, sheileyva29@gmail.com}
+% @year 2022
+% @version 1.0
+% @license CC-BY-NC
+%
+% Se agradecen sus comentarios, contribuciones, 
+% reporte de bugs y la difusión de esta plantilla
+
+
+\documentclass[12pt, letterpaper, spanish, twoside]{article}
+\AddToHook{cmd/section/before}{\clearpage}
+\usepackage{./common/UAQ}
+
+\usepackage{xcolor}
+\usepackage{emptypage}
+\setlength{\cftsecnumwidth}{3em} %Se cambia el espacio entre el item y el nombre de la seccion
+\setlength{\cftsubsecnumwidth}{3em}
+\setlength{\cftsubsecindent}{3em}
+\setlength{\cftsubsubsecindent}{6em}
+
+\usepackage{threeparttablex}
+\usepackage{adjustbox}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\graphicspath{{./figures/}, {../figures}}
+
+\usepackage{tabulary}
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+
+\usepackage{minted}
+\usepackage[section]{placeins}
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+
+\input{./chapters/portada}
+
+\backgroundsetup{
+	scale = 1,
+	angle = 0,
+	opacity = 1,
+	contents = {\includegraphics[width=\paperwidth]{BodyBackground.pdf}}}
+
+\pagenumbering{Roman}
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Objetivos}
+\input{./chapters/1_objetivo}
+
+\section{Introducción}
+\input{./chapters/2_introduccion}
+
+\section{Marco teórico}
+\input{./chapters/3_marco_teorico}
+
+\section{Materiales y métodos}
+\input{./chapters/4_metodo}
+
+% \section{Pseudocódigo}
+% \input{./chapters/5_pseudocodigo}
+
+\section{Resultados}
+\input{./chapters/6_resultados}
+
+\section{Conclusiones}
+\input{./chapters/7_conclusiones}
+
+\nocite{*}
+\renewcommand{\refname}{Referencias bibliográficas}
+\bibliographystyle{IEEEtran-spanish}
+\bibliography{referencias}
+
+\appendix
+\section{Código documentado}
+El código completo y funcional se puede encontrar anexo en el archivo \emph{zip} compartido en conjunto con este reporte, así como en las secciones anexas.
+
+\subsection{Practica4\_EnriqueMenaCamilo.py}
+Script implementado para el desarrollo de la práctica.
+\inputminted[linenos=true, fontsize=\scriptsize]{Python}{../Practica4_EnriqueMenaCamilo.py}
+
+\end{document}

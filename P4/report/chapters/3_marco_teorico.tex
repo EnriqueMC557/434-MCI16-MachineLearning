@@ -1,0 +1,110 @@
+\subsection{Algoritmos de regresión}
+\subsubsection{Regresión lineal simple}
+La regresión lineal simple es un método estadístico utilizado para modelar la relación entre dos variables, donde una variable, llamada variable dependiente o de respuesta, se estima en función de otra variable, llamada variable independiente o predictora. En otras palabras, la regresión lineal simple busca encontrar una línea recta que mejor se ajuste a los datos y describa la relación lineal entre las dos variables.
+
+El modelo de regresión lineal simple se puede expresar matemáticamente mediante la siguiente ecuación:
+
+$$y = \beta_{0} + \beta_{1} * x$$
+
+Donde $y$ es la variable dependiente o de respuesta que se quiere predecir. $x$ es la variable independiente o predictora que se utiliza para predecir la variable dependiente. $\beta_{0}$ es la intersección de la línea de regresión con el eje y, también conocida como el coeficiente de intersección o el término constante. $\beta_{1}$ es la pendiente de la línea de regresión, que representa el cambio en la variable dependiente por cada unidad de cambio en la variable independiente, también conocida como el coeficiente de regresión.
+
+La regresión lineal simple se utiliza para varios propósitos, como la predicción de valores futuros de la variable dependiente, la identificación de la fuerza y dirección de la relación entre las dos variables, la inferencia estadística sobre los coeficientes del modelo, y la evaluación de la bondad de ajuste del modelo a los datos observados. Sin embargo, es importante tener en cuenta las suposiciones y limitaciones de la regresión lineal simple, la normalidad de los errores, y realizar una evaluación adecuada del modelo antes de interpretar los resultados o realizar predicciones basadas en el mismo.
+
+
+\subsubsection{Regresión polinomial}
+La regresión polinomial es una técnica de análisis de regresión que se utiliza para modelar relaciones no lineales entre variables. Mientras que la regresión lineal simple modela relaciones lineales, la regresión polinomial permite ajustar modelos que capturan relaciones curvilíneas o no lineales entre variables.
+
+El modelo de regresión polinomial se puede expresar matemáticamente mediante la siguiente ecuación:
+
+$$y = \beta_{0} + \beta_{1} * x + \beta_{2} * x^2 + ... + \beta_{n} * x^n$$
+
+Donde $y$ es la variable dependiente o de respuesta que se quiere predecir. $x$ es la variable independiente o predictora que se utiliza para predecir la variable dependiente. $\beta_{0}$ es la intersección del modelo con el eje y, también conocida como el coeficiente de intersección o el término constante. $\beta_{1}, \beta_{2}, ..., \beta_{n}$ son los coeficientes de regresión que representan las diferentes potencias de la variable independiente x, desde el primer término lineal hasta el término n-ésimo de mayor grado.
+
+La regresión polinomial se utiliza cuando se sospecha que la relación entre las variables no es lineal y puede tener una forma curvilínea o no lineal en los datos. Puede ser útil en situaciones en las que la relación entre las variables es compleja y no se puede describir adecuadamente con un modelo lineal simple. Sin embargo, es importante tener en cuenta que la regresión polinomial puede ser más propensa al sobreajuste, especialmente con polinomios de alto grado, y se deben tomar precauciones para evaluar la calidad del ajuste y la interpretación de los resultados. Además, la elección del grado del polinomio es un aspecto crítico en la regresión polinomial y requiere un enfoque cuidadoso basado en el contexto del problema y la interpretación de los resultados obtenidos.
+
+
+\subsubsection{Regresión lineal múltiple}
+La regresión lineal múltiple es una técnica de análisis de regresión que se utiliza para modelar la relación entre una variable dependiente y dos o más variables independientes. A diferencia de la regresión lineal simple, que involucra solo una variable independiente, la regresión lineal múltiple permite analizar cómo varias variables independientes se relacionan conjuntamente con la variable dependiente.
+
+El modelo de regresión lineal múltiple se puede expresar matemáticamente mediante la siguiente ecuación:
+
+$$y = \beta_{0} + \beta_{1} * x_{1} + \beta_{2} * x_{2} + ... + \beta_{n} * x_{n}$$
+
+Donde $y$ es la variable dependiente o de respuesta que se quiere predecir. $x_1$, $x_2$, ..., $x_n$ son las variables independientes o predictoras que se utilizan para predecir la variable dependiente. $\beta_0$ es la intersección del modelo con el eje y, también conocida como el coeficiente de intersección o el término constante. $\beta_1$, $\beta_2$, ..., $\beta_n$ son los coeficientes de regresión que representan las relaciones lineales entre las variables independientes y la variable dependiente.
+
+La regresión lineal múltiple se utiliza cuando se sospecha que la relación entre la variable dependiente y las variables independientes es más compleja y no puede ser capturada adecuadamente por un modelo lineal simple. Puede ser útil en situaciones en las que se desea analizar el efecto conjunto de múltiples variables independientes en la variable dependiente, o cuando se busca realizar predicciones más precisas basadas en múltiples predictores. Sin embargo, al igual que con la regresión lineal simple, es importante realizar una evaluación cuidadosa del modelo, incluyendo la interpretación de los coeficientes de regresión, la evaluación de la calidad del ajuste y la validación del modelo, para asegurar la robustez y la validez de los resultados obtenidos.
+
+
+\subsubsection{Regresión Ridge}
+La regresión Ridge es una técnica de regresión regularizada que se utiliza para mitigar el problema de multicolinealidad en modelos de regresión lineal múltiple, y así mejorar la estabilidad y el rendimiento de los modelos. La multicolinealidad se refiere a la presencia de alta correlación entre dos o más variables independientes en un modelo de regresión, lo que puede provocar inestabilidad en los coeficientes de regresión y reducir la capacidad de generalización del modelo.
+
+La ecuación matemática de la regresión Ridge se puede expresar como:
+
+$$y = \beta_0 + \beta_1 * x_1 + \beta_2 * x_2 + ... + \beta_n * x_n + \epsilon$$
+
+Donde $y$ es la variable dependiente o de respuesta que se quiere predecir. $x_1$, $x_2$, ..., $x_n$ son las variables independientes o predictoras que se utilizan para predecir la variable dependiente. $\beta_0$ es la intersección del modelo con el eje y, también conocida como el coeficiente de intersección o el término constante. $\beta_1$, $beta_2$, ..., $\beta_n$ son los coeficientes de regresión que representan las relaciones lineales entre las variables independientes y la variable dependiente. $\epsilon$ es el término de error, que representa la variabilidad no explicada por el modelo.
+
+La regresión Ridge se utiliza cuando se sospecha que existe multicolinealidad en los datos y se busca mitigar su efecto en los coeficientes de regresión. Es especialmente útil en situaciones en las que el número de variables independientes es alto o cuando se trabaja con conjuntos de datos de alta dimensionalidad. Sin embargo, al igual que con cualquier técnica de modelado, es importante realizar una evaluación cuidadosa del modelo, incluyendo la interpretación de los coeficientes de regresión, la evaluación de la calidad del ajuste y la validación del modelo, para asegurar la robustez y la validez de los resultados obtenidos.
+
+
+\subsection{Métricas para evaluación de regresión}
+\subsubsection{Error cuadrático medio}
+El error cuadrático medio (MSE, por sus siglas en inglés) es una medida de evaluación de modelos de regresión que mide la discrepancia promedio entre los valores predichos por el modelo y los valores reales de la variable dependiente. Es el promedio de los errores al cuadrado, lo que implica que los errores negativos y positivos se elevan al cuadrado antes de promediarlos.
+
+La fórmula matemática del error cuadrático medio es:
+
+$$MSE = \frac{\Sigma (y_i - \hat{y}_i)^2}{n}$$
+
+Donde $MSE$ es el error cuadrático medio. $n$ es el número de observaciones en el conjunto de datos. $y_i$ es el valor real de la variable dependiente en la i-ésima observación. $\hat{y}_i$ es el valor predicho por el modelo para la i-ésima observación.
+
+
+\subsubsection{Raíz del error cuadrático medio}
+La raíz del error cuadrático medio (RMSE, por sus siglas en inglés) es otra medida de evaluación de modelos de regresión que se calcula a partir del error cuadrático medio (MSE) y se utiliza para medir la discrepancia entre los valores predichos por el modelo y los valores reales de la variable dependiente.
+
+La fórmula matemática de la raíz del error cuadrático medio es:
+
+$$RMSE = \sqrt{\frac{\Sigma (y_i - \hat{y}_i)^2}{n}}$$
+
+Donde $RMSE$ es la raíz del error cuadrático medio. $n$ es el número de observaciones en el conjunto de datos. $y_i$ es el valor real de la variable dependiente en la i-ésima observación. $\hat{y}$ es el valor predicho por el modelo para la i-ésima observación.
+
+
+\subsubsection{Error absoluto medio}
+El error absoluto medio (MAE, por sus siglas en inglés) es una medida de evaluación de modelos de regresión que se utiliza para medir la discrepancia promedio entre los valores predichos por el modelo y los valores reales de la variable dependiente.
+
+La fórmula matemática del MAE es:
+
+$$MAE = \frac{\Sigma |y_i - \hat{y}_i|}{n}$$
+
+Donde $MAE$ es el error absoluto medio. $n$ es el número de observaciones en el conjunto de datos. $y_i$ es el valor real de la variable dependiente en la i-ésima observación. $\hat{y}$ es el valor predicho por el modelo para la i-ésima observación.
+
+
+\subsubsection{Error cuadrático relativo}
+El error cuadrático relativo (RSE) es una medida de evaluación de modelos de regresión que se utiliza para medir la discrepancia relativa entre los valores predichos por el modelo y los valores reales de la variable dependiente. A diferencia del error cuadrático medio (MSE) y la raíz del error cuadrático medio (RMSE), que se basan en errores absolutos, el RSE considera la proporción de la discrepancia en relación con el valor real de la variable dependiente.
+
+La fórmula matemática del RSE es:
+
+$$RSE = \frac{\Sigma(y_i - \hat{y}_i)^2}{\Sigma(y_i - \bar{y})^2}$$
+
+Donde $RSE$ es el error cuadrático relativo. $y_i$ es el valor real de la variable dependiente en la i-ésima observación. $\hat{y}$ es el valor predicho por el modelo para la i-ésima observación. $\bar{y}$ es el valor promedio en el conjunto de datos.
+
+
+\subsubsection{Coeficiente de correlación de Pearson}
+El coeficiente de correlación de Pearson (PCC), es una medida estadística que evalúa la fuerza y dirección de la relación lineal entre dos variables continuas. Es ampliamente utilizado para medir la correlación entre dos variables, donde un valor de +1 indica una correlación perfectamente positiva, un valor de -1 indica una correlación perfectamente negativa, y un valor de 0 indica una falta de correlación.
+
+El coeficiente de Pearson se calcula como la covarianza entre las dos variables dividida por el producto de las desviaciones estándar de las dos variables. La fórmula matemática del coeficiente de Pearson es:
+
+$$r = \frac{\Sigma(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\Sigma(x_i - \bar{x})^2\Sigma(y_i - \bar{y})_i}}$$
+
+Donde $r$ es el coeficiente de Pearson. $x_i$ y $y_i$ son los valores de las dos variables continuas en la i-ésima observación. $\bar{x}$ y $\bar{y}$ son las medias de las dos variables continuas.
+
+
+\subsubsection{Coeficiente de determinación}
+El coeficiente de determinación ($R^2$) es una medida estadística que indica la proporción de la variabilidad de una variable dependiente que es explicada por una variable independiente o un modelo de regresión. Es una medida comúnmente utilizada para evaluar la calidad de ajuste de un modelo de regresión y determinar qué tan bien se ajusta el modelo a los datos observados.
+
+El coeficiente de determinación se expresa como un valor entre 0 y 1, donde 0 indica que el modelo no explica ninguna variabilidad de la variable dependiente, y 1 indica que el modelo explica toda la variabilidad de la variable dependiente. Un valor de R2 cercano a 1 indica que el modelo es capaz de explicar una gran proporción de la variabilidad de la variable dependiente, mientras que un valor cercano a 0 indica que el modelo no explica mucha variabilidad.
+
+La fórmula matemática del coeficiente de determinación es:
+
+$$R^2 = 1 - \frac{\Sigma(y_i - \hat{y}_i)^2}{\Sigma(y_i - \bar{y})^2}$$
+
+Donde $R^2$ es el coeficiente de determinación. $y_i$ es el valor real de la variable dependiente en la i-ésima observación. $\hat{y}$ es el valor predicho por el modelo para la i-ésima observación. $\bar{y}$ es el valor promedio en el conjunto de datos.

@@ -52,6 +52,20 @@ def k_means(X: np.ndarray, k: int, max_iter: int = 100, tol: float = 1e-3) -> tu
     return labels, centroids
 
 
+def k_means_predict(X: np.ndarray, centroids: np.ndarray) -> np.ndarray:
+    """
+    Predict the cluster label for new points using the centroids obtained during k-means algorithm training.
+
+    :param np.ndarray X: Feature matrix of the new points for which predictions are desired.
+    :param np.ndarray centroids: Centroid matrix obtained during k-means algorithm training.
+    :return np.ndarray: Cluster labels assigned to the new points, corresponding to the index of the closest centroid.
+    """
+    distances = np.linalg.norm(X[:, np.newaxis, :] - centroids, axis=2)
+    labels = np.argmin(distances, axis=1)
+
+    return labels
+
+
 def affinity_propagation(X: np.ndarray, damping: float = 0.5, max_iter: int = 100, conv_iter: int = 10) -> tuple:
     """Run the Affinity Propagation algorithm on the input data.
 

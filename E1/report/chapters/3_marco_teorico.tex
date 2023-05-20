@@ -1,0 +1,44 @@
+El agrupamiento o clustering (en inglés) es una herramienta, específica del aprendizaje no supervisado, encargada de agrupar un conjunto de objetos sin etiqueta en clases o clústeres que son altamente similares entre sí, es decir, comparten propiedades y/o características, mientras que son escasamente diferente al resto de objetos, dado que no tienen propiedades y/o características similares. Básicamente, se desconoce si los datos ocultan patrones, así que el algoritmo se encarga de encontrarlos si es que los hay.
+
+El agrupamiento tiene una gran cantidad de aplicaciones en distintos ámbitos de la vida, desde segmentación de mercado hasta en imágenes médicas, así como en análisis de redes sociales, agrupación de resultados de búsqueda, segmentación de imágenes, motores de búsqueda y más.
+
+
+\subsection{K-Means}
+El algoritmo k-means es un método de clustering basado en particiones que divide un conjunto de datos en k clusters de manera iterativa. El objetivo del algoritmo es minimizar la suma de los cuadrados de las distancias entre cada punto de datos y el centroide de su cluster asignado.
+
+El algoritmo se puede describir en los siguientes pasos:
+\begin{enumerate}
+	\item Seleccionar k centroides iniciales aleatorios del conjunto de datos.
+	\item Asignar cada punto de datos al cluster cuyo centroide esté más cercano.
+	\item Recalcular el centroide de cada cluster como la media de todos los puntos de datos asignados a él.
+	\item Repetir los pasos 2 y 3 hasta que la asignación de los clusters ya no cambie o se alcance un número máximo de iteraciones.
+\end{enumerate}
+
+La distancia euclidiana cuadrática se utiliza para medir la distancia entre cada punto de datos y los centroides. Esta distancia se define como $d(x_i, c_j)^2 = \sum_{l=1}^{m}(x_{i,l} - c_{j,l})^2$, donde m es la dimensión del espacio de características.
+
+Las ventajas del algoritmo k-means son que es fácil de entender e implementar, computacionalmente eficiente para conjuntos de datos grandes y adecuado para conjuntos de datos con una estructura clara de clusters.
+
+Sin embargo, el algoritmo k-means también tiene algunas desventajas, como la elección inicial de los centroides que puede afectar significativamente los resultados, la necesidad de conocer el número de clusters de antemano y la falta de garantía de que el algoritmo encuentre la solución óptima debido a la aleatoriedad en la selección inicial de los centroides.
+
+\subsection{Affinity Propagation}
+El algoritmo Affinity Propagation es un método de clustering basado en la propagación de afinidad, que es una medida de la similitud entre dos puntos de datos. En lugar de agrupar los puntos de datos en clusters explícitos, el algoritmo encuentra un conjunto de puntos de datos llamados "exemplars" que mejor representan el conjunto de datos.
+
+El algoritmo se puede describir en los siguientes pasos:
+\begin{enumerate}
+	\item Inicializar la matriz de similitud S entre los puntos de datos.
+	\item Inicializar la matriz de responsabilidad R entre los puntos de datos.
+	\item Inicializar la matriz de disponibilidad A entre los puntos de datos.
+	\item Actualizar la matriz de responsabilidad utilizando la siguiente ecuación: $R_{i,k} \leftarrow S_{i,k} - \max_{k' \neq k}(A_{i,k'} + S_{i,k'})$, donde $i$ y $k$ son índices de puntos de datos y $R_{i,k}$ es la responsabilidad del punto $i$ con respecto al punto $k$.
+	\item Actualizar la matriz de disponibilidad utilizando la siguiente ecuación: $A_{i,k} \leftarrow \min(0, R_{k,k} + \sum_{i' \neq i, i' \neq k}\max(0, R_{i',k}))$, donde $A_{i,k}$ es la disponibilidad del punto $i$ con respecto al punto $k$.
+	\item Actualizar los exemplars para cada punto de datos utilizando la siguiente ecuación: $s(i) \leftarrow \arg\max_k(R_{i,k} + A_{i,k})$, donde $s(i)$ es el índice del exemplar del punto $i$.
+	\item Repetir los pasos 4 a 6 hasta que la matriz de disponibilidad converja o se alcance un número máximo de iteraciones.
+	
+El algoritmo utiliza una medida de similitud entre dos puntos de datos, que puede ser una medida de distancia o similitud como la distancia euclidiana, la similitud coseno o una medida de correlación.
+
+Una vez que el algoritmo ha convergido, cada punto de datos se asigna a su exemplar correspondiente, que representa el cluster al que pertenece el punto de datos.
+
+Las ventajas del algoritmo Affinity Propagation son que no requiere conocer el número de clusters de antemano, puede manejar conjuntos de datos de alta dimensionalidad y es robusto a los datos ruidosos y atípicos.
+
+Sin embargo, el algoritmo también tiene algunas desventajas, como su sensibilidad a la elección de los parámetros, su computacionalmente costosa complejidad de tiempo y la falta de garantía de que la solución encontrada es la óptima global.
+\end{enumerate}
+

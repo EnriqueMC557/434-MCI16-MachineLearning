@@ -1,0 +1,7 @@
+En este programa generalizado inicialmente se generaron funciones para preparar la base de datos en cuestión a fin de poder implementar posteriormente dos métodos de agrupamiento, esto con el propósito de identificar los puntos fuertes de cada uno de ellos.
+
+Uno de los fuertes del algoritmo de k-means radica en su fácil interpretación, así como en su flexibilidad en el poder seleccionar la cantidad de clusters que se desea obtener. Este último punto es un deficit en el algoritmo affinity aplicado al conjunto de datos utilizado en este trabajo, ya que la misma naturaleza de los datos lo vuelve dificil de converger.
+
+Es importante destacar la importancia de comprender los datos antes de adoptar alguna técnica de agrupamiento que se adapte bien a un conjunto de datos determinado para el problema en cuestión, ya que si se hace un análisis con respecto al algoritmo a utilizar puede brindar un ahorro el tiempo, así como la obtención de resultados más precisos.
+
+Relacionado a las técnicas de reducción de datos, parecierá que resultaron tan efectivas para el caso de nuestro conjunto de datos, sin embargo, cabe mencionar que durante el proces de evaluación se pudo observar que el utlizar el subespacio generado por PCA generalmente permite que el algoritmo k-means alcance el punto de convergencia de forma más rápida que sin esos datos. Siendo específicos, sin usar PCA tardaba de 30 a 100 iteraciones en converger, mientras que con PCA se mantuvo por debajo de las 25 iteraciones.

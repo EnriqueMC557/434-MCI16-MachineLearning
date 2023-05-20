@@ -1,0 +1,66 @@
+Para el desarrollo de este examen se utilizó el lenguaje de programación Python en su versión 3.10, con el que se diseñó un conjunto de scripts y una libreta de Jupyter para cumplir los objetivos de la práctica.
+
+\subsection{Conjunto de datos utilizado}
+El conjunto de datos utilizado para el desarrollo de este examen consta de información relacionada al desempeño físico de un conjunto de atletas. Dicho conjunto de datos se encuentra disponible para su acceso público mediante la plataforma \href{https://www.kaggle.com/datasets/kukuroo3/body-performance-data}{Kaggle}.
+
+Dicho conjunto de datos consta de un total de 11 atributos y variable objetivo, así como un total de $13,393$ instancias sin presencia de datos faltantes y en balanceadas en porciones del $25\%$. Los tipos de datos disponibles en el conjunto de datos mencionado anteriormente constan de:
+
+\begin{itemize}
+	\item Ordinales
+	\begin{itemize}
+		\item age
+	\end{itemize}
+	
+	\item Continuos
+	\begin{itemize}
+		\item height\_cm
+		\item weight\_kg
+		\item body fat\_\%
+		\item diastolic
+		\item systolic
+		\item gripForce
+		\item sit and bend forward\_cm
+		\item sit\-ups counts
+		\item broad jump\_cm
+	\end{itemize}
+	
+	\item Categóricos
+	\begin{itemize}
+		\item gender
+		\item class (variable objetivo)
+	\end{itemize}
+\end{itemize}
+
+\subsection{Pre-procesamiento de datos}
+\subsubsection{Codificación de datos}
+Los datos disponibles en el atributo \emph{gender} y en la variable objetivo se sometieron a un proceso de codificación, esto debido a que originalmente se encontraban en formato de texto y ya se había identificado que eran valores de tipo categórico.
+
+\subsubsection{Normalización de datos}
+Se realizó un proceso de obtención de la distribución de los datos que conforman el conjunto de datos, usando histogramas y diagramas de cajas. Se pudo observar que para la mayoría de los casos se contaba con una distribución del tipo uniforme, por lo que se usó el método \emph{z-score} para normalizar los datos.
+
+Para el caso específico del atributo \emph{age}, se optó por utilizar el método de normaliación min-max, ya que no segía la distribución normal. Otro caso particular fue el observado en el atributo \emph{gender}, el cual se encontraba con únicamente 2 observaciones, por lo cuál no fue necesario aplicar algún método de normalización. Por último, el caso más llamativo se presentó con el atributo \emph{grip\_force}, el cual mostraba una distribucion bi-modal; para este último caso se optó por seguir usando el método \emph{z-score}, ya que será de utilidad tener a todos los atributos dentro del mismo rango para lograr un desempeño adecuado en el algoritmo de análisis de componente principales.
+
+\subsection{Análisis de componentes principales}
+
+Para la implementación del algoritmo de análisis de componente princiáles (PCA) se siguieron dos aproximaciones que serán mencionadas a continuación.
+
+\subsubsection{Extracción de atributos más relevantes}
+En esta aproximación se buscó obtener al grupo de atributos que, en conjunto, lograran maximizar la relevancia de los datos. Esta aproximación se realizó mediante la obtención de los valores y vectores propios del conjunto de datos, para posteriormente calcular su co-varianza y extraear a los de mayor relevancia.
+
+\subsubsection{Obtención de subespacio de componentes principales}
+El procedimento para la obtención de un subespacio de componentes es relativamente facil, se sigue un procedimiento similar al descrito en la sección anterior, teniendo el diferenciador de crear una matriz de proyección y con esta generar el nuevo sub-espacio de componentes principales.
+
+\subsection{Métodos de clustering}
+Para este trabajo se implementaron dos métodos de clustering, uno con la flexibilidad de poder seleccionar la cantidad de clusters que se desea estimar, mientras que el segundo realiza un procedimiento de selección completamente automático.
+
+\subsubsection{K-means}
+El método k-means se implementó siguiendo los pasos descritos en el marco teórico, tomando como apoyo a los métodos disponibles en la librería Numpy para agilizar las operaciones matriciales a desarrollar. Este algoritmo fue probado en dos epacios, el primero consitió de solamente generar los clusters y etiquetas usando todas las instancias de los componentes princpialoes, mientras que el segundo se utilizó para ser evaluado mediante validación cruzada.
+
+\subsubsection{Affinity propagation}
+El método affinity propagation fue implementado usando la librería scikit-learn, la cual cuenta con métodos que permiten agilizar el desarrollo de aplicaciones de clustering. Este método se implementó dentro de una función que permite realizar el entrenamiento con un único llamado, lo cuál a su vez favorece su desempeño. 
+
+
+\subsection{Evaluación con validación cruzada}
+Para la evaluación mediante validación cruzada se optó por utilizar la métrica de exactitud, la cual proporciona un índice de la calidad de la clasificación del algoritmo. Para la obtención de esta métrica se tomó como referencia un método propuesto en \cite{Aceves2021} que muestra como lidiar con la aleatoriedad de los clusters.
+
+Se implementó una validación cruzada de 10 segmentos, donde al finalizar el proceso de validación se obtuvo el valor de exactitud promedio y un diagrama de caja.

@@ -1,0 +1,17 @@
+\subsection{K-Nearest Neighbors}
+El algoritmo K-Nearest Neighbors (KNN) es un algoritmo que pertenece a los algoritmos de aprendizaje supervisado. Como primera etapa se debe seleccionar un número k de vecinos, posteriormente se calcula la distancia de cada uno de los puntos hacia todos los demás. Se toman los k vecinos más cercanos y se le atribuye al punto que se está analizando la clase más frecuente en los vecinos que se analizan. Finalmente se selecciona el mejor número de vecinos.
+
+\subsection{Análisis de componentes principales}
+El Análisis de Componentes Principales (PCA) es una técnica estadística que busca reducir la dimensionalidad de los conjuntos de datos complejos. Se basa en encontrar las direcciones principales que capturan la mayor variabilidad en los datos. Al proyectar los datos en estas direcciones, se conserva la información más relevante mientras se reduce la dimensionalidad. El PCA es utilizado para eliminar correlaciones, detectar patrones y anomalías, y preparar datos para algoritmos de aprendizaje automático. Es una herramienta fundamental en el análisis exploratorio de datos.
+
+\subsection{Coeficiente de correlación de Pearson}
+El coeficiente de correlación de Pearson, es una medida estadística que evalúa la fuerza y dirección de la relación lineal entre dos variables continuas. Es ampliamente utilizado para medir la correlación entre dos variables, donde un valor de +1 indica una correlación perfectamente positiva, un valor de -1 indica una correlación perfectamente negativa, y un valor de 0 indica una falta de correlación.
+
+El coeficiente de Pearson se calcula como la covarianza entre las dos variables dividida por el producto de las desviaciones estándar de las dos variables. La fórmula matemática del coeficiente de Pearson es:
+
+$$r = \frac{\Sigma(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\Sigma(x_i - \bar{x})^2\Sigma(y_i - \bar{y})_i}}$$
+
+Donde $r$ es el coeficiente de Pearson. $x_i$ y $y_i$ son los valores de las dos variables continuas en la i-ésima observación. $\bar{x}$ y $\bar{y}$ son las medias de las dos variables continuas.
+
+\subsection{Validación en línea}
+Este método consiste en la creación de subconjuntos, en los cuales el 70\% de los datos se considera para el entrenamiento, mientras que un 30\% es para las pruebas del modelo de clasificación. Sin embargo, estos porcentajes pueden variar según las necesidades de la base de datos y el proyecto.

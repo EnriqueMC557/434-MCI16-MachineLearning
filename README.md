@@ -2,10 +2,24 @@
 Tareas, prácticas y proyectos de la materia _Machine Learning_
 
 # Contenido
-- Práctica 1: Statistical analysis and data visualization.
-- Práctica 2: Data imputation.
-- Práctica 3: Data normalization and class balancing.
-- Práctica 4: Regression and continuous data metrics.
-- Práctica 5: K Nearest Neighbours.
-- Examen 1: Clustering and principal component analysis.
-- Examen final: Mushroom classification through machine learning.
+- Práctica 1: Análisis estadistico y visualización de datos.
+  - [Código](P1/Practica1_EnriqueMenaCamilo.ipynb)
+  - [Reporte](P1/Practica1_EnriqueMenaCamilo.pdf)
+- Práctica 2: Impputación de datos.
+  - [Código](P2/Practica2_EnriqueMenaCamilo.ipynb)
+  - [Reporte](P2/Practica2_EnriqueMenaCamilo.pdf)
+- Práctica 3: Normalización de datos y balance de clase.
+  - [Código](P3/Practica3_EnriqueMenaCamilo.ipynb)
+  - [Reporte](P3/Practica3_EnriqueMenaCamilo.pdf)
+- Práctica 4: Regresión y métricas de datos continuos.
+  - [Código](P4/Practica4_EnriqueMenaCamilo.ipynb)
+  - [Reporte](P4/Practica4_EnriqueMenaCamilo.pdf)
+- Práctica 5: K Vecinos más cercanos.
+  - [Código](P5/Practica5_EnriqueMenaCamilo.ipynb)
+  - [Reporte](P5/Practica5_EnriqueMenaCamilo.pdf)
+- Examen 1: Clustering y análisis de componentes principales (PCA).
+  - [Código](E1/Examen1_EnriqueMenaCamilo.ipynb)
+  - [Reporte](E1/Examen1_EnriqueMenaCamilo.pdf)
+- Examen final: Clasificación de hongos mediante aprendizaje automático.
+  - [Código]()
+  - [Reporte]()
